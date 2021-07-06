@@ -1,3 +1,7 @@
+library(Seurat)
+library(dplyr)
+library(ggplot2)
+
 ## subsetting seurat 4.0
 tail(combined[[]])
 Idents(object = combined) <- 'orig.ident'
@@ -25,7 +29,7 @@ ident_sub<-as.data.frame(meta)
 ### merge count and identities
 all<-merge(ident_sub,tmat_sub,by="row.names")
 
-library(dplyr)
+
 df <- all %>% sample_n(1316)
 head(df[1:5,1:10])
 table(df$integrated_snn_res.0.2)
